@@ -8,6 +8,5 @@ bot = telebot.TeleBot(TOKEN)
 def otvet_na_text(message):
 
     random_number = randint(1000, 9999)
-    bot.send_message(message.chat.id, random_number)
-
+    bot.send_message(message.chat.id, "Ваш пароль - ", random_number)
 bot.polling()
