@@ -1,17 +1,13 @@
 import telebot
 from myToken import TOKEN
+from random import randint
 bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(content_types=['text'])
 def otvet_na_text(message):
-    mes = message.text
-    user = message.chat.username
-    id = message.chat.id
-    inp = message.text.lower().split()
-    for word in inp:
-        if word[::-1] == word:
-            bot.send_message(id, f"{word} это палиндром")
-        else:
-            bot.send_message(id, f"{word} это не палиндром")
+
+    random_number = randint(1000, 9999)
+    bot.send_message(message.chat.id, random_number)
+
 bot.polling()
