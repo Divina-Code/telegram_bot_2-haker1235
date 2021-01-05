@@ -20,7 +20,7 @@ def komanda_pass(message):
     bot.send_message(message.chat.id, str(rand_number))
 
 @bot.message_handler(content_types=['text'])
-def komanda_game(message):
+def otvet_na_text(message):
     global a
     if a == 0:
         bot.send_message(message.chat.id,"Угадай слово: "+ ''.join(shuffle_word) +'\t')
@@ -30,7 +30,6 @@ def komanda_game(message):
     else:
         if message.text == word:
             bot.send_message(message.chat.id,"Угадал, молодец")
-            bot.send_message(message.chat.id)
             a = 0
 
         else:
