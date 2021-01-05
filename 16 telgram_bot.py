@@ -12,15 +12,15 @@ a = 0
 
 
 bot = telebot.TeleBot(TOKEN)
-@bot.message_handler(content_types = ['text'])
+@bot.message_handler(commands = ['pass'])
 
 def komanda_pass(message):
     bot.send_message(message.chat.id, "Я сгенерирую тебе пароль из 4х цифр")
     rand_number = randint(1000, 9999)
     bot.send_message(message.chat.id, str(rand_number))
 
-@bot.message_handler(content_types=['text'])
-def otvet_na_text(message):
+@bot.message_handler(commands=['play'])
+def komanda_start(message):
     global a
     if a == 0:
         bot.send_message(message.chat.id,"Угадай слово: "+ ''.join(shuffle_word) +'\t')
