@@ -1,7 +1,7 @@
 
 from myToken import TOKEN
 import telebot
-from random import choice, shuffle
+from random import choice, shuffle, randint
 
 words = ['антарктида', 'амплитуда', 'локомотив', 'индустриализация']
 
@@ -14,7 +14,13 @@ a = 0
 bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(content_types = ['text'])
 
-def otvet_na_text(message):
+def komanda_pass(message):
+    bot.send_message(message.chat.id, "Я сгенерирую тебе пароль из 4х цифр")
+    rand_number = randint(1000, 9999)
+    bot.send_message(message.chat.id, str(rand_number))
+
+@bot.message_handler(content_types=['text'])
+def komanda_game(message):
     global a
     if a == 0:
         bot.send_message(message.chat.id,"Угадай слово: "+ ''.join(shuffle_word) +'\t')
@@ -23,12 +29,12 @@ def otvet_na_text(message):
 
     else:
         if message.text == word:
-            bot.send_message(message.chat.id,"Угадал")
-            bot.send_message(message.chat.id,"#"*30)
+            bot.send_message(message.chat.id,"Угадал, молодец")
+            bot.send_message(message.chat.id)
             a = 0
 
         else:
-            bot.send_message(message.chat.id,"Не Угадал")
+            bot.send_message(message.chat.id,"Не Угадал, попробуй ещё раз")
 
 
 bot.polling()
