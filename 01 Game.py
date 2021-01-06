@@ -34,7 +34,7 @@ while game:
         mousepose = pygame.mouse.get_pos()
         pygame.draw.circle(gamedisplay, color, mousepose, radius)
 
-    if pygame.mouse.get_pressed()[2]:
+    elif pygame.mouse.get_pressed()[2]:
         mousepose = pygame.mouse.get_pos()
         pygame.draw.circle(gamedisplay, (255, 255, 255), mousepose, radius)
 
