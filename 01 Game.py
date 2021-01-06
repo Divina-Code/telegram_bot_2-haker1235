@@ -8,7 +8,7 @@ gamedisplay = pygame.display.set_mode((800, 600) )
 gamedisplay.fill((255, 255, 255))
 
 radius = 5
-color = (255, 0, 0)
+color = (0, 0, 0)
 game = True  #Продолжается игра или нет
 while game:
 
