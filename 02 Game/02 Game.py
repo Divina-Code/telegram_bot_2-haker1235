@@ -45,6 +45,10 @@ if answer1 == '1':
             myFile6 = open("5 room.txt")
             print(myFile6.read())
             myFile6.close()
+        elif answer2 == '2'and'5':
+            myFile6 = open("5 room.txt")
+            print(myFile6.read())
+            myFile6.close()
             items = 2
             print("Вы выиграли")
             life = 0
