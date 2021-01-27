@@ -27,7 +27,7 @@ while game:
 
         if e.type == pygame.MOUSEBUTTONDOWN:
             mouseX, mouseY = e.pos
-            if ri(0, 10):
+            if ri(0, 0):
                 draw_snowmen(mouseX, mouseY)
             else:
                 draw_snowmen(mouseX, mouseY, True)
